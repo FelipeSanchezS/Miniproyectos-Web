@@ -136,3 +136,24 @@ body{
     border: 1px solid #ccc;
     outline: none;
 }
+.btn{
+    background: rgba(46, 143, 199, 0.5);
+    height: 35px;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all .3s;
+    margin-top: 10px;
+    padding: 0px 10px;
+}
+.btn:hover{
+    background-color: rgba(39, 104, 201, 0.774);
+}
+.submit{
+    width: 100%;
+}
+.links{
+    margin-bottom: 15px;
+}
