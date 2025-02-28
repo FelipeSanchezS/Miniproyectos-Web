@@ -28,7 +28,7 @@
                     <input type="submit" class="btn" name="submit" value="submit" required>
                 </div>
                 <div class="links">
-                    ¿No tienes cuenta? <a href="/Sistema-LyR/register.html">Regístrate</a>
+                    ¿No tienes cuenta? <a href="/Sistema-LyR/register.php">Regístrate</a>
                 </div>
             </form>
         </div>

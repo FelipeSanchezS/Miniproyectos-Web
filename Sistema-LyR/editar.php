@@ -7,12 +7,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Register</title>
+    <title>Editar usuario</title>
 </head>
 <body>
+    
+    <div class="nav">
+        <div class="logo">
+            <a href="/Sistema-LyR/home.php"> <p>Logo</p> </a>
+        </div>
+
+        <div class="right-links">
+            <a href="#">Modifica tu perfil</a>
+            <a href="#"><button class="btn">Cerrar sesión</button></a>
+        </div>
+    </div>
+
     <div class="container">
         <div class="form-box box">
-            <header>regístrate</header>
+            <header>Modifica tu perfil</header>
             <form action="" method="post">
                 <div class="field input">
                     <label for="username">Username</label>
@@ -30,23 +42,16 @@
                 </div>
 
                 <div class="field input">
-                    <label for="profesion">Profesión</label>
-                    <input type="text" name="profesión" id="profesion" required>
-                </div>
-
-                <div class="field input">
-                    <label for="password">Profesión</label>
-                    <input type="password" name="password" id="password" required>
+                    <label for="profesión">Profesión</label>
+                    <input type="text" name="profesión" id="profesión" required>
                 </div>
 
                 <div class="field">
-                    <input type="submit" class="btn" name="submit" value="Login" required>
-                </div>
-                <div class="links">
-                    ¿Ya tienes cuenta? <a href="/Sistema-LyR/index.html">Inicia Sesión</a>
+                    <input type="submit" class="btn" name="submit" value="Update" required>
                 </div>
             </form>
         </div>
     </div>
+
 </body>
 </html>
