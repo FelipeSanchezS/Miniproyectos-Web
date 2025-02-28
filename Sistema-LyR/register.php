@@ -12,6 +12,39 @@
 <body>
     <div class="container">
         <div class="form-box box">
+
+        <?php 
+            include("php/config.php");
+            if(isset($_POST['submit'])){
+                $username = $_POST['username'];
+                $email = $_POST['email'];
+                $age = $_POST['age'];
+                $profesion = $_POST['profesion'];
+                $password = $_POST['password'];
+
+                //verificamos el email
+
+                $verify_query = mysqli_query($con, "SELECT Email FROM users WHERE Email='$email'" );
+
+                if(mysqli_num_rows($verify_query) !=0 ){
+                    echo    "<div class= 'message'>
+                                <p>Este email ya esta en uso, intenta otro correo</p>
+                            </div> <br>";
+                    echo "<a href='javascript:self.history.back()'><button class='btn'> Vuelve </button>";
+                }
+                else{
+                    mysqli_query($con, "INSERT INTO users(Username, Email, Age, Profesion, Password) VALUES ('$username','$email','$age','$profesion','$password')") or die("No es posible ingresar los valores");
+
+                    echo "<div class= 'message'>
+                            <p>Registro correcto</p>
+                        </div> <br>";
+                    echo "<a href='index.php'><button class='btn'> Ingresa </button>";
+                }
+            }
+            else{
+        ?>
+
+
             <header>regístrate</header>
             <form action="" method="post">
                 <div class="field input">
@@ -31,11 +64,11 @@
 
                 <div class="field input">
                     <label for="profesion">Profesión</label>
-                    <input type="text" name="profesión" id="profesion" required>
+                    <input type="text" name="profesion" id="profesion" required>
                 </div>
 
                 <div class="field input">
-                    <label for="password">Profesión</label>
+                    <label for="password">Password</label>
                     <input type="password" name="password" id="password" required>
                 </div>
 
@@ -47,6 +80,7 @@
                 </div>
             </form>
         </div>
+        <?php } ?>
     </div>
 </body>
 </html>
