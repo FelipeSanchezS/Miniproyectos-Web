@@ -217,3 +217,12 @@ main{
     margin-top: 0;
   }
 } 
+.message{
+  text-align: center;
+  background: #f9eded;
+  padding: 15px 0px;
+  border: 1px solid #6990;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  color: red;
+}

@@ -73,7 +73,7 @@
                 </div>
 
                 <div class="field">
-                    <input type="submit" class="btn" name="submit" value="Login" required>
+                    <input type="submit" class="btn" name="submit" value="Register" required>
                 </div>
                 <div class="links">
                     ¿Ya tienes cuenta? <a href="/Sistema-LyR/index.php">Inicia Sesión</a>
