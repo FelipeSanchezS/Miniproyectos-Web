@@ -41,7 +41,7 @@
         ?>
 
             
-            <a href="#"><button class="btn">Cerrar sesión</button></a>
+            <a href="/Sistema-LyR/cerrarS.php"><button class="btn">Cerrar sesión</button></a>
         </div>
     </div>
 
