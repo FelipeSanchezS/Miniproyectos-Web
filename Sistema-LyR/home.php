@@ -37,10 +37,10 @@
                 $res_Profesión = $result['Profesion'];
             }
 
-            echo "<a href='editar.php?Id=$res_id'>Modificar perfil</a>";
         ?>
 
-            
+            <p class="welcome">Bienvenido <?php echo $res_Uname; ?></p>
+            <a href='editar.php?Id=<?php echo $res_id; ?>'>Modificar perfil</a>
             <a href="/Sistema-LyR/cerrarS.php"><button class="btn">Cerrar sesión</button></a>
         </div>
     </div>

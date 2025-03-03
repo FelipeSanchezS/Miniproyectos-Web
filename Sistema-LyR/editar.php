@@ -32,6 +32,7 @@
 
     <div class="container">
         <div class="form-box box">
+
             <?php
 
             if(isset($_POST['submit'])){
@@ -42,7 +43,7 @@
 
                 $id = $_SESSION['id'];
 
-                $edit_query = mysqli_query($con, "UPDATE users SET Username = '$_Username', email = '$_Email', age = '$_Age', profesión = '$_Profesión' WHERE Id=$id" ) or die("No es posible actualizar datos");
+                $edit_query = mysqli_query($con, "UPDATE users SET Username = '$Username', Email = '$Email', Age = '$Age', Profesion = '$Profesión' WHERE Id=$id" ) or die("No es posible actualizar datos");
 
                 if($edit_query){
                     echo "<div class= 'message'>
@@ -50,20 +51,22 @@
                         </div> <br>";
                     echo "<a href='home.php'><button class='btn'> Volver </button>";
                 }
+            }   
                 else{
                     $id = $_SESSION['id'];
                     $query = mysqli_query($con, "SELECT * FROM users WHERE Id=$id");
 
                     while($result = mysqli_fetch_assoc($query)){
-                        $res_Uname = $result['username'];
-                        $res_Email = $result['email'];
-                        $res_Age = $result['ge'];
-                        $res_Profesión = $result['profesión'];
+                        $res_Uname = $result['Username'];
+                        $res_Email = $result['Email'];
+                        $res_Age = $result['Age'];
+                        $res_Profesión = $result['Profesion'];
                     }
                 
-            }
+            
 
             ?>
+            
             <header>Modifica tu perfil</header>
             <form action="" method="post">
                 <div class="field input">

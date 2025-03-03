@@ -139,6 +139,15 @@ body{
     border: 1px solid #ccc;
     outline: none;
 }
+.right-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.welcome {
+  margin-right: 20px; /* Espacio entre el mensaje de bienvenida y el enlace */
+}
+
 .btn{
     background: rgba(46, 143, 199, 0.5);
     height: 35px;
