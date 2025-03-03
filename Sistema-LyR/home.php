@@ -2,7 +2,7 @@
     session_start();
     include("php/config.php");
     if(!isset($_SESSION['valid'])){
-        header("location: index.php")
+        header("location: index.php");
     }
 ?>
 
@@ -37,7 +37,7 @@
                 $res_Profesión = $result['Profesion'];
             }
 
-            echo "<a href='editar.php?Id=$res_id>Modificar perfil</a>'"
+            echo "<a href='editar.php?Id=$res_id'>Modificar perfil</a>";
         ?>
 
             
@@ -64,7 +64,7 @@
                 </div>
             </div>
         </div>
-
+            
     </main>
 </body>
 </html>
