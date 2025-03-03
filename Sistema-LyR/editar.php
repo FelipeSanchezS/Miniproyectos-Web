@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    include("php/config.php");
+    if(!isset($_SESSION['valid'])){
+        header("location: index.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,26 +32,58 @@
 
     <div class="container">
         <div class="form-box box">
+            <?php
+
+            if(isset($_POST['submit'])){
+                $Username = $_POST['username'];
+                $Email = $_POST['email'];
+                $Age = $_POST['age'];
+                $Profesión = $_POST['profesión'];
+
+                $id = $_SESSION['id'];
+
+                $edit_query = mysqli_query($con, "UPDATE users SET Username = '$_Username', email = '$_Email', age = '$_Age', profesión = '$_Profesión' WHERE Id=$id" ) or die("No es posible actualizar datos");
+
+                if($edit_query){
+                    echo "<div class= 'message'>
+                            <p>Actualización correcta</p>
+                        </div> <br>";
+                    echo "<a href='home.php'><button class='btn'> Volver </button>";
+                }
+                else{
+                    $id = $_SESSION['id'];
+                    $query = mysqli_query($con, "SELECT * FROM users WHERE Id=$id");
+
+                    while($result = mysqli_fetch_assoc($query)){
+                        $res_Uname = $result['username'];
+                        $res_Email = $result['email'];
+                        $res_Age = $result['ge'];
+                        $res_Profesión = $result['profesión'];
+                    }
+                
+            }
+
+            ?>
             <header>Modifica tu perfil</header>
             <form action="" method="post">
                 <div class="field input">
                     <label for="username">Username</label>
-                    <input type="text" name="username" id="username" required>
+                    <input type="text" name="username" id="username" value="<?php echo $res_Uname ?>" required>
                 </div>
 
                 <div class="field input">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" required>
+                    <input type="email" name="email" id="email" value="<?php echo $res_Email ?>" required>
                 </div>
 
                 <div class="field input">
                     <label for="age">Edad</label>
-                    <input type="number" name="age" id="age" required>
+                    <input type="number" name="age" id="age" value="<?php echo $res_Age ?>" required>
                 </div>
 
                 <div class="field input">
                     <label for="profesión">Profesión</label>
-                    <input type="text" name="profesión" id="profesión" required>
+                    <input type="text" name="profesión" id="profesión" value="<?php echo $res_Profesión?>" required>
                 </div>
 
                 <div class="field">
@@ -51,6 +91,7 @@
                 </div>
             </form>
         </div>
+        <?php } ?>
     </div>
 
 </body>
