@@ -24,7 +24,6 @@
         </div>
 
         <div class="right-links">
-
         <?php
             $id = $_SESSION['id'];
             $query = mysqli_query($con, "SELECT * FROM users WHERE Id = $id");
@@ -38,8 +37,7 @@
             }
 
         ?>
-
-            <p class="welcome">Bienvenido <?php echo $res_Uname; ?></p>
+            <!-- <p class="welcome">Bienvenido <?php echo $res_Uname; ?></p> -->
             <a href='editar.php?Id=<?php echo $res_id; ?>'>Modificar perfil</a>
             <a href="/Sistema-LyR/cerrarS.php"><button class="btn">Cerrar sesión</button></a>
         </div>
