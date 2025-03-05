@@ -126,7 +126,7 @@ body{
 /*------------DIVISIÓN DE NÚMEROS POR FILAS--------------*/
 .calc-buttons{
     display: grid;
-    grid-template-columns: repeat(4,1);
+    grid-template-columns: repeat(4,1fr);
     gap: 10px;
 }
 button{
@@ -142,4 +142,18 @@ button{
 button:hover{
     background-color: white;
     color: #333;
+}
+button:active{
+    transform: scale(0.95);
+}
+#calc-evaluate{
+    grid-column: span;
+    background-color: #0d6efd;
+    color: #fff;
+}
+button .calc-operator{
+    background-color: #0d6efd;
+}
+button .calc-operator:hover{
+    background-color: #0d5ed7;
 }
