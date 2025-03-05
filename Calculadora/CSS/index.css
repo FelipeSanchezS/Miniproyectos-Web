@@ -120,7 +120,7 @@ body{
     box-sizing: border-box;
     border: none;
     border-radius: 10px;
-    background-color: black;
+    background-color: rgb(65, 62, 62);
     color: rgb(48, 48, 177);
 }
 /*------------DIVISIÓN DE NÚMEROS POR FILAS--------------*/
@@ -146,8 +146,8 @@ button:hover{
 button:active{
     transform: scale(0.95);
 }
-#calc-evaluate{
-    grid-column: span;
+.calc-buttons #calc-evaluate{
+    grid-column: span 4;
     background-color: #0d6efd;
     color: #fff;
 }
