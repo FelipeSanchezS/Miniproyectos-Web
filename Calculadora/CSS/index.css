@@ -97,13 +97,14 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: black;
+    background: #96ADD8;
+    background: linear-gradient(45deg, #96ADD8, #1843E2);
     font-family: 'poppins';
 }
 /*------------CONTAINER DE LA CALCULADORA--------------*/
 .calc-container{
     width: 300px;
-    background-color: #333;
+    background-color: #7fb2ca;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .5);
@@ -120,8 +121,8 @@ body{
     box-sizing: border-box;
     border: none;
     border-radius: 10px;
-    background-color: rgb(65, 62, 62);
-    color: rgb(48, 48, 177);
+    background-color: rgb(203, 230, 245);
+    color: rgb(252, 252, 252);
 }
 /*------------DIVISIÓN DE NÚMEROS POR FILAS--------------*/
 .calc-buttons{
@@ -156,4 +157,13 @@ button .calc-operator{
 }
 button .calc-operator:hover{
     background-color: #0d5ed7;
+}
+
+.info{
+    color: wheat;
+    margin-right: 200px;
+    text-align: center;
+}
+.info h2{
+    padding: 20px;
 }
