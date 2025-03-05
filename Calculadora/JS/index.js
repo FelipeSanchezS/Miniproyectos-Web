@@ -42,5 +42,9 @@ function calculate(){
             displayValue = (firstOperand / secondOperand).toString();
             break;
     }
+    updateDisplay();
+    currentOperation = null;
 }
+
+//Función para limpiar la pantalla
 
