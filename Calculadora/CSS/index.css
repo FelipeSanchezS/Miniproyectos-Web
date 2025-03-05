@@ -108,7 +108,7 @@ body{
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .5);
-    color: white;
+    color: #444;
 }
 /*-----------SECCIÓN DONDE SE MUESTRAN LOS NÚMEROS---------------*/
 #calc-display{
@@ -122,7 +122,7 @@ body{
     border: none;
     border-radius: 10px;
     background-color: rgb(203, 230, 245);
-    color: rgb(252, 252, 252);
+    color: #444;
 }
 /*------------DIVISIÓN DE NÚMEROS POR FILAS--------------*/
 .calc-buttons{
@@ -166,4 +166,5 @@ button .calc-operator:hover{
 }
 .info h2{
     padding: 20px;
+    border-bottom: #333;
 }
