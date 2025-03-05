@@ -4,7 +4,7 @@ let currentOperation = null;
 let firstOperand = null;
 
 //Función para agregar numero en la pantalla
-function appendNumber(number){
+function appenedNumber(number){
     displayValue += number;
     updateDisplay();
 }
@@ -47,4 +47,13 @@ function calculate(){
 }
 
 //Función para limpiar la pantalla
+function clearDisplay(){
+    displayValue = '';
+    currentOperation = null;
+    firstOperand = null;
+    updateDisplay();
+}
 
+function updateDisplay(){
+    document.getElementById('calc-display').value = displayValue;
+}
