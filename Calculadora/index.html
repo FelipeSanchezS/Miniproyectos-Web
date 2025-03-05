@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Calculadora/CSS/index.css">
     <title>Calculadora</title>
 </head>
 <body>
-    
+    <div class="calc-container">
+        <input type="text" id="calc-display" disabled>
+
+        <div class="calc-buttons">
+            <button onclick="appenedNumber('7')">7</button>
+            <button onclick="appenedNumber('8')">8</button>
+            <button onclick="appenedNumber('9')">9</button>
+            <button onclick="setOperation('/')">/</button>
+
+
+        </div>
+    </div>
+
+    <script src="/Calculadora/JS/index.js"></script>
 </body>
 </html>
