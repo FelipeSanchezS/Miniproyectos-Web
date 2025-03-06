@@ -88,3 +88,51 @@
     font-weight: 900;
     font-style: italic;
 }
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins';
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: #EAE7DD;
+    color: #99775C;
+}
+h1{
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+.choices{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+.choices button{
+    font-size: 1.6rem;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 15px;
+    border-color: #99775C;
+}
+.choices button:hover{
+    background-color: #99775C;
+    color: aliceblue;
+    transition: all ease-in .2s;
+}
+#result{
+    margin-top: 20px;
+    font-size: 1.8rem;
+}
+#score{
+    margin-top: 30px;
+    font-size: 1.5rem;
+}
+.choices button:disabled{
+    background-color: rgb(173, 173, 173);
+    cursor: not-allowed;
+}
