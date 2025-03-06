@@ -10,19 +10,32 @@
     <title>Piedra, Papel o Tijeras</title>
 </head>
 <body>
-    
-    <h1>Piedra, Papel o Tijera</h1>
 
-    <div class="choices">
-        <button onclick="playGame('piedra')" id="btnPiedra">Piedra</button>
-        <button onclick="playGame('papel')" id="btnPapel">Papel</button>
-        <button onclick="playGame('tijera')" id="btnTijera">Tijera</button>
+    <header class="header">
+        <div class="logo-header">Elaborado por: Luis Felipe Sánchez Sánchez</div>
+        <nav class="nav-menu">
+            <ul>
+                <li></li>
+                <li><a href="">Contácteme</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Piedra, Papel o Tijera</h1>
+
+        <div class="choices">
+            <button onclick="playGame('piedra')" id="btnPiedra">Piedra</button>
+            <button onclick="playGame('papel')" id="btnPapel">Papel</button>
+            <button onclick="playGame('tijera')" id="btnTijera">Tijera</button>
+        </div>
+
+        <!-- Aca mostrados el resultado de cada partida -->
+        <div id="result"></div>
+        <!-- Aca mostrados el marcador -->
+        <div id="score">Jugador: 0 | Computadora 0</div>
     </div>
-
-    <!-- Aca mostrados el resultado de cada partida -->
-    <div id="result"></div>
-    <!-- Aca mostrados el marcador -->
-    <div id="score">Jugador: 0 | Computadora 0</div>
+    
 
 
 

@@ -91,20 +91,59 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'poppins';
+    font-family: 'Poppins';
+    list-style: none;
 }
 body{
     display: flex;
+    justify-content: center; /* Centra todo el contenido horizontalmente */
+    /* Mantiene el contenido hacia la parte superior */
+    flex-direction: column;
+    background-color: #f5e5b0;
+    color: #99775C;
+}
+
+/*---------INICIO SECCIÓN DEL MENU-----------*/
+header{
+    background-color: #000000;
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.nav-menu ul{
+    display: flex;
+    align-items: center;
+}
+.nav-menu li a{
+    margin-right: 4.5rem;
+    color: #fff; /* Cambia el color de los elementos de la lista para mayor visibilidad */
+    text-decoration: none;
+}
+.nav-menu a:hover{
+    color: #99775C;
+}
+
+/*---------INICIO SECCIÓN DEL JUEGO-----------*/
+.container{
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    margin-top: 40px;
+
+    display: flex;
+    height: 100%;
     flex-direction: column;
-    background-color: #EAE7DD;
-    color: #99775C;
 }
 h1{
     font-size: 50px;
+    margin-top: 120px; /* Aumentar espacio para que no se solape con el menú */
     margin-bottom: 40px;
+    text-align: center; /* Centra el título */
 }
 .choices{
     display: flex;
@@ -127,10 +166,12 @@ h1{
 #result{
     margin-top: 20px;
     font-size: 1.8rem;
+    text-align: center; /* Centra el texto del resultado */
 }
 #score{
     margin-top: 30px;
     font-size: 1.5rem;
+    text-align: center; /* Centra el marcador */
 }
 .choices button:disabled{
     background-color: rgb(173, 173, 173);
