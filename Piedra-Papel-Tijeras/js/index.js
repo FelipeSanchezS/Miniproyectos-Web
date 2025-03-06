@@ -45,3 +45,8 @@ function endGame(){
     document.getElementById('btnPapel').disabled = true;
     document.getElementById('btnTijera').disabled = true;
 }
+
+//Función para recargar pagina
+function recargarPag(){
+    location.reload(true);
+}

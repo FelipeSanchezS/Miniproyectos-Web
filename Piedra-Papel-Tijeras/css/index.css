@@ -177,3 +177,15 @@ h1{
     background-color: rgb(173, 173, 173);
     cursor: not-allowed;
 }
+#btnReload{
+    padding: 25px 140px;
+    margin-top: 40px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 25px;
+    border: none;
+}
+#btnReload:hover{
+    background-color: #99775C;
+    color: white;
+}
