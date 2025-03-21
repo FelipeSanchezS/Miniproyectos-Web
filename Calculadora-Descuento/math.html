@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/estilo.css">
+    <title>CURSO DE JAVASCRIPT</title>
+</head>
+<body>
+    <h1>Calculadora de Precio con Descuento</h1>
+
+    <form>
+        <label for="precio">Precio del Producto:</label>
+        <input type="number" id="precio" placeholder="Ingrese el precio" required><br><br>
+
+        <label for="descuento">Descuento (%):</label>
+        <input type="number" id="descuento" placeholder="Ingrese el descuento" required><br><br>
+
+        <button type="button" onclick="calcularPrecio()">Calcular</button><br><br>
+
+        <label for="resultado">Nuevo Precio:</label>
+        <input type="text" id="resultado" readonly><br>
+    </form>
+
+    <script src="./math.js"></script>
+</body>
+</html>
