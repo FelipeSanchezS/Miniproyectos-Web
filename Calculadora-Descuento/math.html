@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/estilo.css">
-    <title>CURSO DE JAVASCRIPT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Estilos/estilo.css">
+    <title>CALCULADORA DESCUENTOS</title>
 </head>
 <body>
     <h1>Calculadora de Precio con Descuento</h1>
 
+<div class="formato">
     <form>
         <label for="precio">Precio del Producto:</label>
         <input type="number" id="precio" placeholder="Ingrese el precio" required><br><br>
@@ -18,10 +22,12 @@
 
         <button type="button" onclick="calcularPrecio()">Calcular</button><br><br>
 
-        <label for="resultado">Nuevo Precio:</label>
+        <label for="resultado" class="resultado">Nuevo Precio:</label>
         <input type="text" id="resultado" readonly><br>
     </form>
+</div>
 
-    <script src="./math.js"></script>
+
+    <script src="/JS/math.js"></script>
 </body>
 </html>
