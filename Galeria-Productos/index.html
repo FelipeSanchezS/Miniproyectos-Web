@@ -8,10 +8,40 @@
     <title>Galería Productos</title>
 </head>
 <body>
-
+    <!-- Navegación -->
     <nav class="navbar navbar-light bg-light">
         <a href="/" class="navbar-brand">__Galería de producto</a>
     </nav>
+
+    <div class="container">
+        <!-- Aplicación -->
+        <div id="app" class="row pt-5">
+            <div class="col-md-4">
+                <!-- Formulario -->
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Agrega un producto</h4>
+                    </div>
+                    <form action="/" class="card-body" id="product-form">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Ingrese el nombre" class="form-control">
+                        </div> <br>
+                        <div class="form-group">
+                            <input type="number" id="price" placeholder="Ingrese el valor" class="form-control">
+                        </div> <br>
+                        <div class="form-group">
+                            <input type="number" id="year" placeholder="Ingrese el año" class="form-control">
+                        </div> <br>
+                        <!-- Botón -->
+                        <input type="submit" value="save" class="btn btn-primary btn-block">
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-8">
+
+            </div>    
+        </div>
+    </div>
 
 
 
