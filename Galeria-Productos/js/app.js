@@ -19,3 +19,9 @@ class ui{
         
     }
 }
+
+//Elementos del DOM
+//Aca cuando se envían los elementos en el form
+document.getElementById('product-form').addEventListener('submit', function(){
+    alert('Enviando formulario')
+})
