@@ -29,5 +29,10 @@ document.getElementById('product-form')
         const price = document.getElementById('price').value;
         const year = document.getElementById('year').value;
 
+        const product = new product(name, price, year)
+
+        
+
+
         e.preventDefault();
 });
