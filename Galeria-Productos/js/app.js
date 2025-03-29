@@ -7,8 +7,19 @@ class product{
 }
 
 class ui{
-    addproduct(){
-
+    addproduct(product){
+        const productlist = document.getElementById('product-list')
+        const element = document.createElement('div')
+        element.innerHTML = `
+            <div class="card text-center mb-4">
+                <div class="card-body">
+                    <strong>Producto</strong>: ${product.name} - 
+                    <strong>Precio</strong>: ${product.price} - 
+                    <strong>Año</strong>: ${product.year}
+                </div>
+            </div>
+        `
+        productlist.appendChild(element)
     }
 
     deleteproduct(){
