@@ -1,9 +1,6 @@
-<?php
-
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers;
 
 use App\Models\Libro;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class LibroController extends Controller
@@ -15,31 +12,28 @@ class LibroController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'titulo' => 'required|string',
-            'autor' => 'required|string',
-            'genero' => 'required|string',
+        $request->validate([
+            'titulo' => 'required',
+            'autor' => 'required',
+            'genero' => 'required',
         ]);
-
-        return Libro::create($validated);
+        return Libro::create($request->all());
     }
 
-    public function show($id)
+    public function update(Request $request, Libro $libro)
     {
-        return Libro::findOrFail($id);
-    }
-
-    public function update(Request $request, $id)
-    {
-        $libro = Libro::findOrFail($id);
-        $libro->update($request->only(['titulo', 'autor', 'genero', 'disponible']));
-
+        $request->validate([
+            'titulo' => 'required',
+            'autor' => 'required',
+            'genero' => 'required',
+        ]);
+        $libro->update($request->all());
         return $libro;
     }
 
-    public function destroy($id)
+    public function destroy(Libro $libro)
     {
-        Libro::destroy($id);
-        return response()->json(['message' => 'Libro eliminado']);
+        $libro->delete();
+        return response()->noContent();
     }
 }

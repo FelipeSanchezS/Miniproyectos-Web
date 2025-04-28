@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Estadisticas from "./components/estadisticas";
-import Libros from "./components/libros";
+import Libros from "./components/Libro";
 
 function App() {
   const [vista, setVista] = useState("estadisticas");
