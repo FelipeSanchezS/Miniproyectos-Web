@@ -85,27 +85,33 @@ const Libros = () => {
 
       <h2 className="text-xl font-bold mb-2">Listado de Libros</h2>
       <table className="w-full border">
-        <thead>
-          <tr className="bg-gray-200">
-            <th className="p-2 border">Título</th>
-            <th className="p-2 border">Autor</th>
-            <th className="p-2 border">Género</th>
-            <th className="p-2 border">Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {libros.map((libro) => (
-            <tr key={libro.id}>
-              <td className="border p-2">{libro.titulo}</td>
-              <td className="border p-2">{libro.autor}</td>
-              <td className="border p-2">{libro.genero}</td>
-              <td className="border p-2">
-                <button onClick={() => editarLibro(libro)} className="bg-yellow-400 text-white px-2 py-1 mr-2">Editar</button>
-                <button onClick={() => eliminarLibro(libro.id)} className="bg-red-500 text-white px-2 py-1">Eliminar</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
+      <thead>
+      <tr className="bg-gray-200">
+        <th className="p-2 border">Título</th>
+        <th className="p-2 border">Autor</th>
+        <th className="p-2 border">Género</th>
+        <th className="p-2 border">Disponible</th> {/* 👈 Agregado */}
+      <th className="p-2 border">Acciones</th>
+      </tr>
+</thead>
+
+<tbody>
+  {libros.map((libro) => (
+    <tr key={libro.id}>
+      <td className="border p-2">{libro.titulo}</td>
+      <td className="border p-2">{libro.autor}</td>
+      <td className="border p-2">{libro.genero}</td>
+      <td className="border p-2">
+        {libro.disponible === 1 ? 'Sí' : 'No'}
+      </td> {/* 👈 Agregado */}
+      <td className="border p-2">
+        <button onClick={() => editarLibro(libro)} className="bg-yellow-400 text-white px-2 py-1 mr-2">Editar</button>
+        <button onClick={() => eliminarLibro(libro.id)} className="bg-red-500 text-white px-2 py-1">Eliminar</button>
+      </td>
+    </tr>
+  ))}
+</tbody>
+
       </table>
     </div>
   );
