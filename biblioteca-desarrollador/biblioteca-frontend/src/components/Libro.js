@@ -18,23 +18,39 @@ const Libros = () => {
 
   const guardarLibro = (e) => {
     e.preventDefault();
+  
+    // Validaciones simples
+    if (titulo.trim() === "" || autor.trim() === "" || genero.trim() === "") {
+      alert("Todos los campos son obligatorios.");
+      return;
+    }
+  
+    const datosLibro = { titulo, autor, genero };
+  
     if (idEditando) {
-      api.put(`/libros/${idEditando}`, { titulo, autor, genero }).then(() => {
+      api.put(`/libros/${idEditando}`, datosLibro).then(() => {
+        alert("Libro actualizado correctamente.");
         setIdEditando(null);
         setTitulo("");
         setAutor("");
         setGenero("");
         cargarLibros();
+      }).catch(() => {
+        alert("Error actualizando el libro.");
       });
     } else {
-      api.post("/libros", { titulo, autor, genero }).then(() => {
+      api.post("/libros", datosLibro).then(() => {
+        alert("Libro creado exitosamente.");
         setTitulo("");
         setAutor("");
         setGenero("");
         cargarLibros();
+      }).catch(() => {
+        alert("Error creando el libro.");
       });
     }
   };
+  
 
   const editarLibro = (libro) => {
     setIdEditando(libro.id);
