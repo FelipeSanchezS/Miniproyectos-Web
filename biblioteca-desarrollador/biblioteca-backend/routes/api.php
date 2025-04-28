@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Api\PrestamoController;
 use App\Http\Controllers\Api\EstadisticasController;
-use App\Http\Controllers\LibroController;
+use App\Http\Controllers\Api\LibroController;
 
 Route::apiResource('libros', LibroController::class);
 Route::prefix('estadisticas')->group(function () {
