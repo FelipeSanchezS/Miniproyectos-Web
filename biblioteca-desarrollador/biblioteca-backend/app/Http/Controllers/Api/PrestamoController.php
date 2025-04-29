@@ -2,59 +2,49 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Models\Prestamo;
 use App\Models\Libro;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class PrestamoController extends Controller
 {
     public function index()
     {
-        return Prestamo::with(['libro', 'usuario'])->get();
+        return Prestamo::with('libro')->get();
     }
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'user_id' => 'required|exists:users,id',
+        $request->validate([
             'libro_id' => 'required|exists:libros,id',
-            'fecha_prestamo' => 'required|date'
+            'usuario' => 'required|string',
+            'fecha_prestamo' => 'required|date',
+            'fecha_devolucion' => 'required|date|after_or_equal:fecha_prestamo',
         ]);
 
+        // Marcar el libro como no disponible
         $libro = Libro::find($request->libro_id);
-
         if (!$libro->disponible) {
-            return response()->json(['error' => 'El libro no está disponible'], 400);
+            return response()->json(['error' => 'Libro no disponible'], 400);
         }
 
-        // Marcar libro como no disponible
-        $libro->update(['disponible' => false]);
+        $libro->disponible = false;
+        $libro->save();
 
-        return Prestamo::create($validated);
+        return Prestamo::create($request->all());
     }
 
-    public function devolver($id)
+    public function devolver(Prestamo $prestamo)
     {
-        $prestamo = Prestamo::findOrFail($id);
+        $prestamo->devuelto = true;
+        $prestamo->save();
 
-        if ($prestamo->fecha_devolucion) {
-            return response()->json(['error' => 'Este préstamo ya fue devuelto'], 400);
-        }
+        // Marcar el libro como disponible
+        $libro = $prestamo->libro;
+        $libro->disponible = true;
+        $libro->save();
 
-        $prestamo->update(['fecha_devolucion' => now()]);
-
-        // Marcar libro como disponible
-        $prestamo->libro->update(['disponible' => true]);
-
-        return response()->json(['message' => 'Libro devuelto con éxito']);
-    }
-
-    public function destroy($id)
-    {
-        $prestamo = Prestamo::findOrFail($id);
-        $prestamo->delete();
-
-        return response()->json(['message' => 'Préstamo eliminado']);
+        return response()->json(['mensaje' => 'Libro devuelto']);
     }
 }
